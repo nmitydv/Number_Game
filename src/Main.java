@@ -164,7 +164,7 @@ public class Main extends javax.swing.JFrame {
         } else if (number > 100 || number < 0) {
             JOptionPane.showMessageDialog(null, "PLEASE ENTER NUMBER IN RANGE OF 1 TO 100", "Error",
                     JOptionPane.INFORMATION_MESSAGE);
-        } else if (number < 100) {
+        } else if (number <= 100) {
             if (number == a) {
                 youranswer.setText("Correct");
             } else if (number > a) {
@@ -174,17 +174,14 @@ public class Main extends javax.swing.JFrame {
             }
         }
         int score = 0;
-        if (a < 50) {
-            score = (number + a) / 2;
-        }
-        if (a > 50) {
-            score = (number + a) / 3;
-        }
-        if (a == number) {
-            score = 100;
-        }
-        if (a > 101 || a < 0) {
+        if (number < 0 || number > 100) {
             score = 0;
+        } else if (a == number) {
+            score = 100;
+        } else if (a < 50) {
+            score = (number + a) / 2;
+        } else if (a > 50) {
+            score = (number + a) / 3;
         }
 
         String stringscore = Integer.toString(score);
