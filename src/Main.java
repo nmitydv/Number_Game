@@ -174,15 +174,16 @@ public class Main extends javax.swing.JFrame {
             }
         }
         int score = 0;
-        if (a < 50 && a > 0) {
+        if (a < 50) {
             score = (number + a) / 2;
         }
-        if (a > 50 && a > 101) {
+        if (a > 50) {
             score = (number + a) / 3;
         }
         if (a == number) {
             score = 100;
-        } else {
+        }
+        if (a > 101 || a < 0) {
             score = 0;
         }
 
