@@ -1,8 +1,8 @@
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.text.JTextComponent;
 import java.util.*;
 
+//In this game the user has to guess what will be the number that matches the random number in the specified range of 1 to 100 
+// And provide feedback on whether the guessis correct, too high, or too low.
 public class Main extends javax.swing.JFrame {
     int number;
     static int a = 0;
@@ -174,14 +174,16 @@ public class Main extends javax.swing.JFrame {
             }
         }
         int score = 0;
-        if (a < 50) {
+        if (a < 50 && a > 0) {
             score = (number + a) / 2;
         }
-        if (a > 50) {
+        if (a > 50 && a > 101) {
             score = (number + a) / 3;
         }
         if (a == number) {
             score = 100;
+        } else {
+            score = 0;
         }
 
         String stringscore = Integer.toString(score);
